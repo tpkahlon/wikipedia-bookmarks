@@ -61,7 +61,7 @@ export default function Index() {
   return (
     <div id="app">
       <Head>
-        <title>Wikipedia Hotlinks</title>
+        <title>Wikipedia Bookmarks</title>
         <link
           rel="shortcut icon"
           href="https://www.flaticon.com/svg/vstatic/svg/372/372416.svg?token=exp=1612834069~hmac=86bedf73e1a96541dee7bc99e9dba579"
@@ -69,9 +69,9 @@ export default function Index() {
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <h1>Wikipedia Hotlinks</h1>
+      <h1>Wikipedia Bookmarks</h1>
       <p>
-        Search all the available hotlinks on a Wikipedia page for easier
+        Search all the available bookmarks on a Wikipedia page for easier
         targeting or cross-referencing.
       </p>
       <p>
@@ -84,7 +84,7 @@ export default function Index() {
       ) : (
         <>
           <form onSubmit={handleSubmit}>
-            <label for="address">URL:</label>
+            <label htmlFor="address">URL:</label>
             <input
               type="text"
               id="address"
