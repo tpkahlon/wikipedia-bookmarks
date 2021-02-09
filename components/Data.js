@@ -19,7 +19,7 @@ export default function Data({ data: { result, message }, address }) {
         <a href={i} target="_blank" rel="noopener noreferrer">
           {i}
         </a>
-        <CopyToClipboard onCopy={onCopy} text={`${address}#${i}`}>
+        <CopyToClipboard onCopy={onCopy} text={i}>
           <button>Copy</button>
         </CopyToClipboard>
       </li>
