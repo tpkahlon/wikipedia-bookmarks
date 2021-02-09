@@ -100,6 +100,15 @@ export default function Index() {
           )}
         </>
       )}
+      <footer>
+        <a
+          href="https://github.com/tpkahlon/wikipedia-bookmarks"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Source Code
+        </a>
+      </footer>
     </div>
   );
 }
