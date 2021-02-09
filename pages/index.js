@@ -56,8 +56,6 @@ export default function Index() {
     fetcher
   );
 
-  if (error) return <div>Something went wrong, please try again...</div>;
-
   return (
     <div id="app">
       <Head>
@@ -79,23 +77,27 @@ export default function Index() {
         <br />
         <code>https://en.wikipedia.org/wiki/Sublime_Text</code>
       </p>
-      {!data && sent ? (
-        <div>Loading...</div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="address">URL:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          value={address}
+          placeholder="Wikipedia link..."
+          onChange={handleChange}
+        />
+        <button type="submit">Search</button>
+      </form>
+      {error ? (
+        <div className="error">Something went wrong, please try again...</div>
       ) : (
         <>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="address">URL:</label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              value={address}
-              placeholder="Wikipedia link..."
-              onChange={handleChange}
-            />
-            <button type="submit">Search</button>
-          </form>
-          {data && <Data data={data} address={address} />}
+          {!data && sent ? (
+            <div className="error">Loading...</div>
+          ) : (
+            <>{data && <Data data={data} address={address} />}</>
+          )}
         </>
       )}
     </div>

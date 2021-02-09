@@ -25,6 +25,6 @@ export default function Data({ data: { result, message }, address }) {
       </li>
     ));
   }
-  if (message) return <div>{message}</div>;
+  if (message) return <div className="error">{message}</div>;
   return <ul>{listing}</ul>;
 }
